@@ -1,0 +1,19 @@
+.footer {
+    .container {
+
+        height: 15vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        p {
+            color: white;
+        }
+    }
+
+    hr {
+        width: 60%;
+    }
+    
+}

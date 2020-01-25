@@ -3,7 +3,7 @@ import axios from 'axios';
 import Repository from './components/Repository';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
-
+import Footer from './components/Footer';
 
 function App(props) {
 
@@ -40,39 +40,43 @@ function App(props) {
 	}
 
     return (
-		<div className="repositories">
-			<h1>Discover GitHub repositories</h1>
-			<div className="selector">
-				<button 
-					className={activeRoute === "reallyunknown" ? "active": ""}
-					onClick={() => setPreference("reallyunknown")}>
-					Really unknown
+		<div className="app">
+			<div className="repositories">
+				<h1>Discover GitHub repositories</h1>
+				<div className="selector">
+					<button 
+						className={activeRoute === "reallyunknown" ? "active": ""}
+						onClick={() => setPreference("reallyunknown")}>
+						Really unknown
+						</button>
+					<button 
+						className={activeRoute === "unknown" ? "active" : ""}
+						onClick={() => setPreference("unknown")}>
+							Unknown
+						</button>
+					<button 
+						className={activeRoute === "maybeknown" ? "active": ""}
+						onClick={() => setPreference("maybeknown")}>
+						Maybe unkown
 					</button>
-				<button 
-					className={activeRoute === "unknown" ? "active" : ""}
-					onClick={() => setPreference("unknown")}>
-						Unknown
-					</button>
-				<button 
-					className={activeRoute === "maybeknown" ? "active": ""}
-					onClick={() => setPreference("maybeknown")}>
-					Maybe unkown
-				</button>
+				</div>
+				<div className="container">
+					<Loader
+						className={["loader", loading ? "" : "hide"].join(" ")}
+						type="Triangle"
+						color="#66fcf1"
+						height={300}
+						width={300}
+					/>
+					{repos.map(r => {
+						return (
+							<Repository key={r.name} {...r}/>
+						)
+					})}
+				</div>
+
 			</div>
-			<div className="container">
-				<Loader
-					className={["loader", loading ? "" : "hide"].join(" ")}
-					type="Triangle"
-					color="#66fcf1"
-					height={300}
-					width={300}
-				/>
-				{repos.map(r => {
-					return (
-						<Repository key={r.name} {...r}/>
-					)
-				})}
-			</div>
+			<Footer/>
 		</div>
 	)
 }
