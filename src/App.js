@@ -14,12 +14,12 @@ function App(props) {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		fetch();
+		fetch(activeRoute);
 	}, []);
 	
-	function fetch() {
+	function fetch(route) {
 		setLoading(true);
-		axios.get('/' + activeRoute).then(response => {
+		axios.get('/' + route).then(response => {
 			setLoading(false);
 			const items = response.data.items;
 			if(!items) return;
@@ -36,7 +36,7 @@ function App(props) {
 	function setPreference(route) {
 		setActiveRoute(route);
 		localStorage.setItem("route", route);
-		fetch();
+		fetch(route);
 	}
 
     return (
