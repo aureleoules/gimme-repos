@@ -28,8 +28,10 @@ a {
 
         transition: opacity 0.2s;
 
+        
         &.hide {
             opacity: 0;
+            z-index: -1;
         }
     }
 
@@ -37,8 +39,10 @@ a {
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 99;
 
         button {
+            z-index: 100;
             width: 220px;
             height: 50px;
             background: #66fcf1;
