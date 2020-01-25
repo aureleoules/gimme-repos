@@ -48,4 +48,23 @@
         }
     }
 
+    
+    
+    @media screen and (max-width: 1550px) {
+        .top-right {
+            top: 18px;
+        }
+        .top a {
+            font-size: 1.5em!important;
+        }
+
+        width: 80%;
+    }
+    @media screen and (max-width: 1200px) {
+        width: 90%;
+    }
+    @media screen and (max-width: 950px) {
+        width: 100%;
+    }
+
 }

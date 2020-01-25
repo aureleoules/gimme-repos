@@ -18,6 +18,62 @@ a {
 }
 
 .repositories {
+    h1 {
+        margin-bottom: 15px;
+    }
+    .loader {
+        position: absolute;
+        bottom: 33%;
+
+        transition: opacity 0.2s;
+
+        &.hide {
+            opacity: 0;
+        }
+    }
+
+    .selector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            width: 220px;
+            height: 50px;
+            background: #66fcf1;
+            color: #1F2833;
+            border: none;
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 1em;
+            margin: 15px;
+
+            outline: none;
+
+            cursor: pointer;
+            border-radius: 4px;
+
+            transition: background 0.1s;
+
+            &.active {
+                background: #1d97e9;
+                color: white;
+            }
+        }
+
+        @media screen and(max-width: 1550px) {
+            width: 95%;
+            margin: 0 auto;
+        }
+    }
+
+    h1 {
+        font-size: 2.6em;
+        margin-top: 50px;
+        color: white;
+        text-align: center;
+    }
     .container {
         width: 90%;
         margin: 0 auto;
@@ -27,7 +83,11 @@ a {
         flex-direction: column;
 
         .repository {
-            margin: 60px 15px;
+            margin: 50px 15px;
+
+            @media screen and (max-width: 1200px) {
+                margin: 20px 15px;
+            }
         }
     }
 }
