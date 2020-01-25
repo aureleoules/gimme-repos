@@ -12,6 +12,11 @@ body {
     }
 }
 
+a {
+    color: #66fcf1;
+    text-decoration: none;
+}
+
 .repositories {
     .container {
         width: 90%;
@@ -22,7 +27,7 @@ body {
         flex-direction: column;
 
         .repository {
-            margin: 35px 15px;
+            margin: 60px 15px;
         }
     }
 }

@@ -19,7 +19,9 @@ function App(props) {
 		<div className="repositories">
 			<div className="container">
 				{repos.map(r => {
-					return <Repository {...r}/>
+					return (
+						<Repository key={r.name} {...r}/>
+					)
 				})}
 			</div>
 		</div>
