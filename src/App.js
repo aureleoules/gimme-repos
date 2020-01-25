@@ -57,7 +57,7 @@ function App(props) {
 					<button 
 						className={activeRoute === "maybeknown" ? "active": ""}
 						onClick={() => setPreference("maybeknown")}>
-						Maybe unkown
+						Maybe known
 					</button>
 				</div>
 				<div className="container">
